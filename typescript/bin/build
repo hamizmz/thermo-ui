@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ $(pwd) == */bin/ ]]; then
+	cd ..
+fi
+
+echo "Compiling JavaScript..."
+tsc --pretty -w -p . &
+sleep 2.5
+nodemon --watch build ./build/main.js
